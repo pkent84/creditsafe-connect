@@ -4,6 +4,11 @@ namespace SynergiTech\Creditsafe;
 
 use Lcobucci\JWT\Parser;
 use Lcobucci\JWT\Token;
+use Lcobucci\Encoding\JoseEncoder;
+use Lcobucci\JWT\Token\InvalidTokenStructure;
+use Lcobucci\JWT\Encoding\CannotDecodeContent;
+use Lcobucci\JWT\Token\UnsupportedHeaderFound;
+use Lcobucci\JWT\UnencryptedToken;
 use GuzzleHttp\Psr7;
 
 /**
@@ -94,7 +99,8 @@ class Client
      */
     public function setToken(string $token) : void
     {
-        $this->token = (new Parser())->parse($token);
+        $parser = new Parser(new JoseEncoder())
+        $this->token = $parser->parse($token);
     }
 
     /**
