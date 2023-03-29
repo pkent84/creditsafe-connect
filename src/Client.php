@@ -140,7 +140,7 @@ class Client
 
         $guzzleArgs =  [
             'headers' => [
-                'Authorization' => (string) $this->token
+                'Authorization' => $this->token->toString()
             ],
         ];
 
