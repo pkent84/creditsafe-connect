@@ -2,9 +2,8 @@
 
 namespace SynergiTech\Creditsafe;
 
-use Lcobucci\JWT\Parser;
-use Lcobucci\JWT\Token;
-use Lcobucci\Encoding\JoseEncoder;
+use Lcobucci\JWT\Token\Parser;
+use Lcobucci\JWT\Encoding\JoseEncoder;
 use Lcobucci\JWT\Token\InvalidTokenStructure;
 use Lcobucci\JWT\Encoding\CannotDecodeContent;
 use Lcobucci\JWT\Token\UnsupportedHeaderFound;
