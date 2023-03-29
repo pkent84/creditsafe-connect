@@ -99,7 +99,7 @@ class Client
      */
     public function setToken(string $token) : void
     {
-        $parser = new Parser(new JoseEncoder())
+        $parser = new Parser(new JoseEncoder());
         $this->token = $parser->parse($token);
     }
 
